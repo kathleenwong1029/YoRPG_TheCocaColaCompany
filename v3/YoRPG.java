@@ -78,7 +78,9 @@ public class YoRPG
 	//instantiate the player's character
 
 	s = "Choose thine class: \n \n";
-        s += "Warrior - " + Warrior.about() + "\n";
+        s += "Warrior - " + Warrior.about() + "\n \n";
+	s += "Assassin - " + Assassin.about() + "\n \n";
+	s += "Paladin - " + Paladin.about() + "\n \n";
 
 	System.out.println(s);
 
@@ -90,6 +92,19 @@ public class YoRPG
 	    classselect = in.readLine();
 	}
 	catch (IOException e) {}
+
+	if ( classselect.equals("Warrior") || classselect.equals("warrior")){
+	    pat = new Warrior (name);
+	}
+	else if (classselect.equals("Assassin") || classselect.equals("assassin")){
+	    pat = new Assassin (name);
+	}
+        else if (classselect.equals("Paladin") || classselect.equals("paladin")){
+	    pat = new Paladin (name);
+	}
+	else {
+	    System.out.println("That nay be a class, friend!");
+	}
 
     }//end newGame()
 
@@ -110,7 +125,7 @@ public class YoRPG
     else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
 
-	    smaug = new Monster("Smaug");
+	    smaug = new Monster();
 
 	    while (smaug.isAlive() && pat.isAlive()) {
 		// Give user the option of using a special attack:
