@@ -1,7 +1,7 @@
 //Kathleen Wong , Ben Shapiro, Aidan Griffin
 //The CocaCola Company
 //APCS1 pd 1
-//HW31- Ye Olde Role Playing Game, Expanded
+//HW31-- Ye Olde Role Playing Game, Expanded
 //2017-11-14
 
 public class Kraken extends Monster{

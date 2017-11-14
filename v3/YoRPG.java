@@ -1,3 +1,9 @@
+//Kathleen Wong,Ben Shapiro, Aidan Griffin
+//The CocaCola Company
+//APCS1 pd1
+//HW31 -- Ye Olde Role Playing Game, Expanded .
+//2017-11-14
+
 /**********************************************
  * class YoRPG -- Driver file for Ye Olde Role Playing Game.
  * Simulates monster encounters of a wandering adventurer.
@@ -107,7 +113,7 @@ public class YoRPG
 	}
 
     }//end newGame()
-
+    
 
   /*=============================================
     boolean playTurn -- simulates a round of combat
@@ -125,7 +131,19 @@ public class YoRPG
     else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
 
-	    smaug = new Monster();
+	    //random double is chosen to choose which monster will appear
+	    double wMon = Math.random();
+	    if (wMon < .33){
+		smaug = new Demon();
+		System.out.println( "YE SHALL FACE THE DEMON");
+	    }
+	    else if (wMon < .66){
+		smaug = new Zombie();
+		System.out.println( "YE SHALL FACE THE ZOMBIE");
+	    }
+	    else{
+		smaug = new Kraken();
+	        System.out.println( "YE SHALL FACE THE KRAKEN");}
 
 	    while (smaug.isAlive() && pat.isAlive()) {
 		// Give user the option of using a special attack:
