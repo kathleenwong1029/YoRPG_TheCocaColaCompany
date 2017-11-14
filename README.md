@@ -1,20 +1,26 @@
 # YoRPG_TheCocaColaCompany
+## YoRPG
 
-## YoRPGv3: Classes and Monsters! 
+### Attributes :thumbsup:
 
-### Classes 
+1. hitPTS
+2. strength
+3. defense
+4. attack
 
-#### Warrior - increased strength, decreased defense
+### Protagonists :angel:
 
-##### Assassin - increased attack rating, decreased health
+1. Warrior - increased strength, decreased defense
 
-#### Paladin - increased defense, decreased strength
+2. Assassin - increased attack rating, decreased health
+
+3. Paladin - increased defense, decreased strength
 
 
-### Monsters 
+### Monsters :japanese_ogre:
 
-#### Demon - stronger attack rating
+1. Demon - stronger attack rating
 
-#### Kraken - higher health, higher strength
+2. Kraken - higher health, higher strength
 
-#### Zombie - higher defense
+3. Zombie - higher defense
