@@ -1,19 +1,19 @@
-#### YoRPG_TheCocaColaCompany
-### YoRPG
+# YoRPG_TheCocaColaCompany
+## YoRPG
 
-## Classes 
+### Classes 
 
-# Warrior - increased strength, decreased defense
+#### Warrior - increased strength, decreased defense
 
-# Assassin - increased attack rating, decreased health
+##### Assassin - increased attack rating, decreased health
 
-# Paladin - increased defense, decreased strength
+#### Paladin - increased defense, decreased strength
 
 
-## Monsters 
+### Monsters 
 
-# Demon - stronger attack rating
+#### Demon - stronger attack rating
 
-# Kraken - higher health, higher strength
+#### Kraken - higher health, higher strength
 
-# Zombie - higher defense
+#### Zombie - higher defense
