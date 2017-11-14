@@ -1,5 +1,6 @@
 # YoRPG_TheCocaColaCompany
-## YoRPG
+
+## YoRPGv3: Classes and Monsters! 
 
 ### Classes 
 
