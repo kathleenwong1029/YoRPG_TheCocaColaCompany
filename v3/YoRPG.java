@@ -22,6 +22,7 @@ public class YoRPG
     private int moveCount;
     private boolean gameOver;
     private int difficulty;
+    private String classselect;
 
     private InputStreamReader isr;
     private BufferedReader in;
@@ -75,7 +76,20 @@ public class YoRPG
 	catch ( IOException e ) { }
 
 	//instantiate the player's character
-	pat = new Protagonist(name);
+
+	s = "Choose thine class: \n \n";
+        s += "Warrior - " + Warrior.about() + "\n";
+
+	System.out.println(s);
+
+	s = "Selection: ";
+
+	System.out.println(s);
+
+	try {
+	    classselect = in.readLine();
+	}
+	catch (IOException e) {}
 
     }//end newGame()
 

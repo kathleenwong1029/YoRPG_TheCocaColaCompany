@@ -1,30 +1,50 @@
-//The Coca-Cola Company: Ben Shapiro, Kathleen Wong, Aidan Griffin
-//APCS1 pd1
-//HW #28 - Ye Olde Role Playing Game
-//2017-11-08
+/**********************************************
+ * class Monster -- Represents random incarnations of
+ *  the adventurer's natural enemy in Ye Olde RPG
+ * ---
+ * Clyde "Thluffy" Sinclair
+ **********************************************/
 
-public class Monster extends Character{
-    private String name;
-    //Constructor: initializes variables/monster stats
-    public Monster(String newName){
-	super(60, 40);
-	name = newName;
-    }
+public class Monster extends Character
+{
 
-    //getName: returns the name of the monster
-    public String getName(Monster a){
-	return a.name;
-    }
+  // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    //attack: Calculates damage done by the monster to the Protagonist, based on the monster's strength and attack and the protagonist's defense stat
 
-    //main: quick test
+  /*=============================================
+    default constructor
+    pre:  instance vars are declared
+    post: initializes instance vars.
+    =============================================*/
+  public Monster()
+  {
+    _hitPts = 150;
+    _strength = 20 + (int)( Math.random() * 45 ); // [20,65)
+    _defense = 20;
+    _attack = 1;
+  }
 
-    public static void main(String [] args){
-	Monster Ben = new Monster("Aidan");
-	System.out.println(Ben.getStrength());//should return 60
-	System.out.println(Ben.getDefense());//should return 40
-	System.out.println(Ben.attackRating);//should return random value b/w 0.2 and 1.2
-    }
-}
-	
+
+  /*=============================================
+    int attack(Protagonist) -- simulates attack on a Protagonist
+    pre:  Input not null
+    post: Calculates damage to be inflicted, flooring at 0. 
+    Calls opponent's lowerHP() method to inflict damage. 
+    Returns damage dealt.
+    =============================================*/
+  public int attack( Protagonist opponent )
+  {
+    int damage = (int)( (_strength * _attack) - opponent.getDefense() );
+    //System.out.println( "\t\t**DIAG** damage: " + damage );
+
+    if ( damage < 0 )
+	    damage = 0;
+
+    opponent.lowerHP( damage );
+
+    return damage;
+  }//end attack
+
+
+}//end class Monster
