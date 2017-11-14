@@ -1,13 +1,13 @@
-/**********************************************
- * class Protagonist -- the protagonist of Ye Olde RPG
- * ---
- * Clyde "Thluffy" Sinclair
- **********************************************/
+//Kathleen Wong , Ben Shapiro, Aidan Griffin
+//The CocaCola Company
+//APCS1 pd 1
+//HW32-- Ye Olde Role Playing Game, Expanded
+//2017-11-14
 
-public class Protagonist extends Character
+public abstract class Protagonist extends Character
 {
   // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
-  private String _name = "J. Doe";
+  protected String _name = "J. Doe";
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -62,20 +62,10 @@ public class Protagonist extends Character
     return damage;
   }//end attack
 
+    public abstract String about();
 
-  //prepare a Protagonist for a special attack
-  public void specialize()
-  {
-    _attack = .75;
-    _defense = 20;
-  }
+    public abstract void specialize();
 
-
-  //revert to normal mode
-  public void normalize()
-  {
-    _attack = .4;
-    _defense = 40;
-  }
+    public abstract void normalize();
 
 }//end class Protagonist

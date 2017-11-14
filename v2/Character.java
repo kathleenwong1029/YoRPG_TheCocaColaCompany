@@ -1,37 +1,42 @@
-//The Coca-Cola Company: Ben Shapiro, Kathleen Wong, Aidan Griffin
+//Aidan Griffin, Ben Shapiro, Kathleen Wong
+//The Coca-Cola Company
 //APCS1 pd1
-//HW #30 - Ye Olde Role Playing Game, Improved
-//2017-10-11
-
+//HW30 -- Ye Olde Role Playing Game, Improved
+//2017-11-11
 public class Character{
-
-    public static int HP;
-    public static int strength;
-    public static int defense;
-    public static double attackRating;
-
-    public static boolean isAlive(){
-	return (HP > 0);
+    //variable declaration
+    public int health, strength, defense;
+    public double attackRating;
+    //constructor initializing variables
+    public Character(int s, int d){
+	health = 100;
+	strength = s;
+	defense = d;
+	attackRating = 0.2 + Math.random();
     }
-
-    public static int getDefense(){
-	return defense;
+    //isAlive: checks if the character is alive by checking if the character's health is greater than 0: if not, the character is dead (returns false)  
+    public boolean isAlive(){
+        return (health > 0);
     }
-
-    public static void lowerHP (int damage){
-
-	HP = HP - damage;
+    //getDefense: returns the defense stat of the character  
+    public int getDefense(){
+        return defense;
     }
-
-    public static int attack (Character c){
-	int damage = (int)(strength * attackRating) - c.defense;
-	c.lowerHP(damage);
+    public int getStrength(){
+	return strength;
+    }
+    //lowerHP: changes the character's current HP based on how much damage it took in a turn. If HP reaches 0 or less, the character is dead  
+    public void lowerHP(int x){
+	health -= x;
+    }
+    //attack: Calculates damage done by a character to another character, based on the character's strength and attack and the other character's defense stat      
+    public int attack(Character Aidan){
+	int damage = ((int) (attackRating * strength)) - Aidan.defense;
+	Aidan.lowerHP(damage);
 	return damage;
     }
-
-    public static void main(String [] args){
-	Character Ben = new Character();
-	System.out.println(attack(Ben));
+    public static void main(String[] args){
+	Character Mike = new Character(70, 50);
+	System.out.println(Mike.strength);
     }
-    
-}
+}    

@@ -46,5 +46,6 @@ public class Monster extends Character
     return damage;
   }//end attack
 
-
+    
+    
 }//end class Monster

@@ -82,11 +82,18 @@ public class YoRPG
 	catch ( IOException e ) { }
 
 	//instantiate the player's character
+	Protagonist ham = new Warrior("ham");
 
 	s = "Choose thine class: \n \n";
-        s += "Warrior - " + Warrior.about() + "\n \n";
-	s += "Assassin - " + Assassin.about() + "\n \n";
-	s += "Paladin - " + Paladin.about() + "\n \n";
+        s += "Warrior - " + ham.about() + "\n \n";
+
+	ham = new Assassin("ham");
+
+	s += "Assassin - " + ham.about() + "\n \n";
+
+	ham = new Paladin("ham");
+	
+	s += "Paladin - " + ham.about() + "\n \n";
 
 	System.out.println(s);
 
