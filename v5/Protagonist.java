@@ -6,66 +6,83 @@
 
 public abstract class Protagonist extends Character
 {
-  // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
-  protected String _name = "J. Doe";
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
+    protected String _name = "J. Doe";
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-  /*=============================================
-    default constructor
-    pre:  instance vars are declared
-    post: initializes instance vars.
-    =============================================*/
-  public Protagonist()
-  {
-    _hitPts = 125;
-    _strength = 100;
-    _defense = 40;
-    _attack = .4;
-  }
+    /*=============================================
+      default constructor
+      pre:  instance vars are declared
+      post: initializes instance vars.
+      =============================================*/
+    public Protagonist()
+    {
+	_hitPts = 125;
+	_strength = 100;
+	_defense = 40;
+	_meleeattack = .5;
+	_rangedattack = .5;
+	_magicattack = .5;
+	_hitchance = .5;
+    }
 
 
-  /*=============================================
-    overloaded constructor
-    pre:  instance vars are declared
-    post: initializes instance vars. _name is set to input String.
-    =============================================*/
-  public Protagonist( String name ) {
-    this();
-    _name = name;
-  }
+    /*=============================================
+      overloaded constructor
+      pre:  instance vars are declared
+      post: initializes instance vars. _name is set to input String.
+      =============================================*/
+    public Protagonist( String name ) {
+	this();
+	_name = name;
+    }
 
 
-  // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~
-  public String getName() { return _name; }
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~
+    public String getName() { return _name; }
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-  /*=============================================
-    int attack(Monster) -- simulates attack on instance of class Monster
-    pre:  Input not null
-    post: Calculates damage to be inflicted, flooring at 0. 
-    Calls opponent's lowerHP() method to inflict damage. 
-    Returns damage dealt.
-    =============================================*/
-  public int attack( Monster opponent )
-  {
+    /*=============================================
+      int attack(Monster) -- simulates attack on instance of class Monster
+      pre:  Input not null
+      post: Calculates damage to be inflicted, flooring at 0. 
+      Calls opponent's lowerHP() method to inflict damage. 
+      Returns damage dealt.
+      =============================================*/
+    public int attack( Monster opponent )
+    {
+	int damage;
+	if (attacktype.equals("melee")){
+	    damage = (int)( (_strength * _meleeattack) - opponent.getDefense() );
+	}
+	if (attacktype.equals("ranged")){
+	    damage = (int)( (_dex * _rangedattack) - (opponent.getDefense() / 2));
+	}
+	if (attacktype.equals("magic")){
+	    damage = (int)( (_dex * _magicattack));
+	}
 
-    int damage = (int)( (_strength * _attack) - opponent.getDefense() );
-    //System.out.println( "\t\t**DIAG** damage: " + damage );
-
-    if ( damage < 0 )
+	if ( damage < 0 )
 	    damage = 0;
 
-    opponent.lowerHP( damage );
+	opponent.lowerHP( damage );
 
-    return damage;
-  }//end attack
+	return damage;
+    }//end attack
+
+    public boolean hitchance (){
+	return (Math.random() <= _hitchance);
+    }
+	   
 
     public abstract String about();
 
     public abstract void specialize();
 
     public abstract void normalize();
+
+    public abstract String attacktype();
 
 }//end class Protagonist

@@ -11,7 +11,8 @@ public class Character
     protected int _hitPts;
     protected int _strength;
     protected int _defense;
-    protected double _attack;
+    protected double _meleeattack, _rangedattack, _magicattack, _hitchance;
+
 
 
     // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~

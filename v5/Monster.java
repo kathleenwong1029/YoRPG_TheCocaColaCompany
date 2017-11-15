@@ -23,6 +23,7 @@ public class Monster extends Character
     _strength = 20 + (int)( Math.random() * 45 ); // [20,65)
     _defense = 20;
     _attack = 1;
+    _hitchance = .5;
   }
 
 
@@ -45,6 +46,10 @@ public class Monster extends Character
 
     return damage;
   }//end attack
+
+    public boolean hitchance (){
+	return (Math.random() <= _hitchance);
+    }
 
     
     

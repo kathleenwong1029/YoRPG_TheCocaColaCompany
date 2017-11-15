@@ -168,8 +168,19 @@ public class YoRPG
 		else
 		    pat.normalize();
 
+		if (pat.hitchance() && smaug.hitchance()){
 		d1 = pat.attack(smaug);
 		d2 = smaug.attack(pat);
+		}
+		else if (!pat.hitchance() && smaug.hitchance()){
+		    d1 = "a critical miss! 0";
+		    d2 = smaug.attack(pat);
+		}
+		else {
+		    d1 = "a critical miss! 0";
+		    d2 = "a critical miss! 0";
+		}
+		    
 
 		System.out.println( "\n" + pat.getName() + " dealt " + d1 +
                             " points of damage.");
