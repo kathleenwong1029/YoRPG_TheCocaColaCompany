@@ -25,3 +25,12 @@ Monsters :japanese_ogre:
 2. Kraken - higher health, higher strength
 
 3. Zombie - higher defense
+
+Experimental Vision 
+
+1. Create a Rewards System - can be used in batttles/revival
+
+2. More attributes and random variables for each Protagonist
+
+
+
