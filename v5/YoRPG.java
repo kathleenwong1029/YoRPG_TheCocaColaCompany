@@ -1,8 +1,8 @@
-//Kathleen Wong,Ben Shapiro, Aidan Griffin
+//Kathleen Wong, Ben Shapiro, Aidan Griffin
 //The CocaCola Company
 //APCS1 pd1
-//HW31 -- Ye Olde Role Playing Game, Expanded .
-//2017-11-14
+//HW33 -- Ye Olde Role Playing Game, Realized .
+//2017-11-15
 
 /**********************************************
  * class YoRPG -- Driver file for Ye Olde Role Playing Game.
@@ -95,6 +95,10 @@ public class YoRPG
 	
 	s += "Paladin - " + ham.about() + "\n \n";
 
+	ham = new Swordsman("ham");
+
+	s += "Swordsman - " + ham.about() + "\n \n";
+	
 	ham = new Archer("ham");
 
 	s += "Archer - " + ham.about() + "\n \n";
@@ -139,6 +143,9 @@ public class YoRPG
         else if (classselect.equals("Paladin") || classselect.equals("paladin")){
 	    pat = new Paladin (name);
 	}
+	else if (classselect.equals("Swordsman") || classselect.equals("swordsman")){
+            pat = new Swordsman (name);
+        }
 	else if (classselect.equals("Archer") || classselect.equals("archer")){
 	    pat = new Archer (name);
 	}

@@ -7,9 +7,11 @@
 public class Zombie extends Monster{
 
     //The zombie has higher defense than other monsters.
-    public Zombie (){
+    public Zombie(){
 	super();
-	_defense += .5;
+	_defense += 10;
+	_hitchance -= .1;
+        _meleeattack -= .2;
     }
 
     public static String about(){
@@ -18,7 +20,7 @@ public class Zombie extends Monster{
 
     public static void main(String []args){
 	//test cases
-	Zombie k = new Zombie ();
+	Zombie k = new Zombie();
 	System.out.println(k._defense);
 	System.out.println(k.about());
     }

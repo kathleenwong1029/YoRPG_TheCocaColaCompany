@@ -7,10 +7,11 @@
 public class Kraken extends Monster{
 
     //The Kraken has higher hitPts and strength than other monsters.
-    public Kraken (){
+    public Kraken(){
 	super();
 	_hitPts += 50;
 	_strength += 20;
+	_defense -= 10;
     }
 
     public static String about(){
