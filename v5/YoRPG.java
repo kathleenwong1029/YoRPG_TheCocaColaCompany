@@ -30,6 +30,11 @@ public class YoRPG
     private int difficulty;
     private String classselect;
 
+    //Protagonist can collect or recieve Cans O' Cola as a reward
+    private int cansOCola;
+    private int canReward;
+    private int choice;
+
     private InputStreamReader isr;
     private BufferedReader in;
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,8 +56,8 @@ public class YoRPG
 
     /*=============================================
       void newGame() -- gathers info to begin a new game
-      pre:  
-      post: according to user input, modifies instance var for difficulty 
+      pre:
+      post: according to user input, modifies instance var for difficulty
       and instantiates a Protagonist
       =============================================*/
     public void newGame()
@@ -92,7 +97,7 @@ public class YoRPG
 	s += "Assassin - " + ham.about() + "\n \n";
 
 	ham = new Paladin("ham");
-	
+
 	s += "Paladin - " + ham.about() + "\n \n";
 
 	ham = new Archer("ham");
@@ -161,13 +166,13 @@ public class YoRPG
 	    System.out.println("That nay be a class, friend! Try again!");
 
 	    System.exit(0);
-	    
+
 	}
 
 	System.out.println("\n Your stats: \n" + "Health: " + Integer.toString(pat._hitPts) + "\n" + "Strength: " + Integer.toString(pat._strength) + "\n" + "Defense: " + Integer.toString(pat._defense) + "\n" + "Dexterity: " + Integer.toString(pat._dex) + "\n" + "Intelligence: " + Integer.toString(pat._intel) + "\n" + "Class: " + classselect);
 
     }//end newGame()
-    
+
 
   /*=============================================
     boolean playTurn -- simulates a round of combat
@@ -180,8 +185,14 @@ public class YoRPG
     int i = 1;
     int d1, d2;
 
-    if ( Math.random() >= ( difficulty / 3.0 ) )
+    if ( Math.random() >= ( difficulty / 3.0 ) ){
 	    System.out.println( "\nNothing to see here. Move along!" );
+
+      //no battle results in up to 29 cans
+      canReward = (int)(Math.random() * 30);
+      System.out.println(canReward + " cans O cola seem to have fallen from the skies");
+      cansOCola += canReward;
+    }
     else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
 
@@ -223,30 +234,30 @@ public class YoRPG
 				    " points of damage.");
 
 		System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() + " for " + d2 + " points of damage.");
-		
+
 		}
 		else if (!pat.hitchance() && smaug.hitchance()){
 
 		    d2 = smaug.attack(pat);
-		    
+
 		    System.out.println("You missed!");
 
 		    System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() + " for " + d2 + " points of damage.");
-		    
+
 		}
 		else {
 
 		    System.out.println("Both ye and the monster missed! Fools!");
-		    
+
 		}
-		    
+
 
 
 	    }//end while
 
 	    //option 1: you & the monster perish
 	    if ( !smaug.isAlive() && !pat.isAlive() ) {
-		System.out.println( "'Twas an epic battle, to be sure... " + 
+		System.out.println( "'Twas an epic battle, to be sure... " +
 				    "You cut ye olde monster down, but " +
 				    "with its dying breath ye olde monster. " +
 				    "laid a fatal blow upon thy skull." );
@@ -255,23 +266,57 @@ public class YoRPG
 	    //option 2: you slay the beast
 	    else if ( !smaug.isAlive() ) {
 		System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
-		return true;
-	    }
-	    //option 3: the beast slays you
-	    else if ( !pat.isAlive() ) {
-		System.out.println( "Ye olde self hath expired. You got dead." );
-		return false;
-	    }
-    }//end else
 
-    return true;
-  }//end playTurn()
+    //winning a battle will result in up to 49 cans
+    canReward = (int)(Math.random() * 50);
+    System.out.println(canReward + " cans O' cola seem to have fallen from the skies");
+    cansOCola += canReward;
+		return true;
+  }
+  //option 3: the beast slays you
+  else if ( !pat.isAlive() ) {
+System.out.println( "Ye olde self hath expired. You got dead." );
+
+  // player has option of revival
+  if(cansOCola > 40){
+      String a;
+     a = "Ye has collected " + cansOCola + " cans O' cola";
+     a += "\n Revival will cost ye 50 cans";
+     a += "Do ye wish to be revived? \n";
+     a += "\t1: I shall fight on! \n";
+     a += "\t2: Let me rest.";
+     System.out.println (a);
+
+     try {
+       choice = Integer.parseInt(in.readLine());
+     }
+     catch ( IOException e ) { }
+
+     if (choice == 1){
+       // if revived, protagonist is given 100 hitPts to continue
+       pat._hitPts = 100;
+       cansOCola -= 40;
+       return true;
+     }
+     else {
+       return false;
+        } //end revival option
+      }
+        else {
+          //if player does not have 50 cans, they cannot pay for revival
+          return false;
+        }
+      }// end option 3
+}//end else
+
+return true;
+}//end playTurn()
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
     public static void main( String[] args )
     {
-	//As usual, move the begin-comment bar down as you progressively 
+	//As usual, move the begin-comment bar down as you progressively
 	//test each new bit of functionality...
 
 	//loading...
@@ -292,5 +337,3 @@ public class YoRPG
     }//end main
 
 }//end class YoRPG
-
-
