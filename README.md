@@ -1,8 +1,8 @@
-YoRPG_TheCocaColaCompany
+# YoRPG_TheCocaColaCompany
 ---
 Members: Kathleen T.  Wong, Benjamin T. Shapiro, Aidan T. Griffin
 
-# Instructions
+## Instructions
 1. Choose the difficulty of ye fate
 2. State thy name
 3. Choose a class, each will have its unique abilities
@@ -10,16 +10,16 @@ Members: Kathleen T.  Wong, Benjamin T. Shapiro, Aidan T. Griffin
 5. Collect the cansOCola along the way, they may aid you in the end
 6. Save the world, hero
 
-# Feature Additions
+## Feature Additions
   * cansOCola can be collected with or without a battle and used to revive characters
   * meleeattack, magicattack, rangedattack : different subclasses of Protagonists have different way to calculate attack
 
-# Code Restructuring
+## Code Restructuring
   * Added additional if statement in YoRPG , allowing player to choose if they want to be revived, given they have enough cansOCola
   * Added attacktype to each protgaonist, as well as variables for dex and intel
   * Added different equations in attack method of Protagonist, depending on attacktype
 
-Character Attributes :thumbsup:
+## Character Attributes :thumbsup:
 
 1. hitPTS
 2. strength
@@ -32,62 +32,65 @@ Character Attributes :thumbsup:
 9. dex
 10. intel
 
-Protagonists :angel:
- * Subclasses
-** 1. Warrior - increased strength, decreased defense
+## Protagonists :angel:
+### Subclasses
+ 1. Warrior
+    * meleeattack
+    * increased strength
+    *  decreased defense
 
-** 2. Assassin
+  2. Assassin
   * meleeattack
   * increased meleeattack , hitchance
   * lower defense ,hitPts
 
-** 3. Paladin
+ 3. Paladin
   * meleeattack
   * increased defense
   * decreased strength
 
-* 4. Arbalest
+ 4. Arbalest
   * rangedattack
   * increased dex, defense, rangedattack, lower hitchance
 
-* 5. Archer
+ 5. Archer
   * rangedattack
   * higher dex
   * lower defense
 
-* 6. Mage
+ 6. Mage
   * magicattack
   * higher intel
   * lower defense
 
-* 7. Musketeer
+ 7. Musketeer
   * rangedattack
   * lower defense, hitchance
   * higher rangedattack
 
-* 8. Sorcerer
+ 8. Sorcerer
   * magicattack
   * higher intel, magicattack
   * lower defense, hitchance
 
-* 9. Swordsman
+ 9. Swordsman
   * meleeattack
   * higher defense, hitchance
   * lower meleeattack
 
-* 10. Warlock
+ 10. Warlock
   ** magicattack
   ** higher intel, magicattack
   ** lower defnse, hitchance
-* Attack Types
-  ** meleeattack
-    *** defined as strength * meleeattack - Monster's defense
-  ** rangedattack
-    *** defined as dex * rangedattack - (Monster's defense /2)
-  ** magicattack
-  *** defined as intel * magicattack
+### Attack Types
+  * meleeattack
+    ** defined as strength * meleeattack - Monster's defense
+  * rangedattack
+    ** defined as dex * rangedattack - (Monster's defense /2)
+  * magicattack
+    ** defined as intel * magicattack
 
-Monsters :japanese_ogre:
+## Monsters :japanese_ogre:
 
 1. Demon
   * stronger attack rating
@@ -98,12 +101,9 @@ Monsters :japanese_ogre:
 3. Zombie
   * higher defense
 
-YoRPG
-  * cansOCola variable
-    * random amount acquired with or without batttle
-    * can be used to revive player if player has acquired enough
 
-Experimental Vision
+
+## Experimental Vision
 
 1. Create a Rewards System - can be used in batttles/revival
 
