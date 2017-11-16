@@ -1,0 +1,35 @@
+public class Musketeer extends Protagonist {
+
+    public Musketeer (String a){
+	super(a);
+	_defense -= 10;
+	_rangedattack += .5;
+        _hitchance -= .3;
+	    }
+
+    double old1 = _rangedattack;
+    double old2 = _hitchance;
+    int old3 = _defense;
+
+    public void specialize(){
+
+	_rangedattack += .3;
+	_hitchance -= .1;
+	_defense -= 10;
+    }
+
+    public void normalize(){
+
+	_rangedattack = old1;
+	_defense = old3;
+	_hitchance = old2;
+    }
+
+    public String about(){
+	return "Test";
+    }
+
+    public String attacktype(){
+	return "ranged";
+    }
+}

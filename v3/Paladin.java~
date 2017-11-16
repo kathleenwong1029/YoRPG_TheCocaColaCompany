@@ -1,0 +1,10 @@
+public class Paladin extends Protagonist {
+
+    public Paladin (String a){
+	super(a);
+	defense += 50;
+	strength -= 20;
+    }
+
+    public static String about(){
+	return "The Paladin is an intimidating figure, clad in thick armor ardorned with countless crests and parchments, and more importantly \n equipped typically with a massive, battle-scarred shield. \n Paladins are men and women in service of the \n Church of Light, a widespread faith that many far across the land loyally follow. \n Paladins 

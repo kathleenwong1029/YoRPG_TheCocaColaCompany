@@ -1,0 +1,5 @@
+public class Musketman extends Protagonist {
+
+    public Musketman (String a){
+	super(a);
+	_dex += 20;
