@@ -40,55 +40,56 @@ Members: Kathleen T.  Wong, Benjamin T. Shapiro, Aidan T. Griffin
     *  decreased defense
 
   2. Assassin
-  * meleeattack
-  * increased meleeattack , hitchance
-  * lower defense ,hitPts
+    * meleeattack
+    * increased meleeattack , hitchance
+    * lower defense ,hitPts
 
  3. Paladin
-  * meleeattack
-  * increased defense
-  * decreased strength
+    * meleeattack
+    * increased defense
+    * decreased strength
 
  4. Arbalest
-  * rangedattack
-  * increased dex, defense, rangedattack, lower hitchance
+    * rangedattack
+    * increased dex, defense, rangedattack
+    * lower hitchance
 
  5. Archer
-  * rangedattack
-  * higher dex
-  * lower defense
+    * rangedattack
+    * higher dex
+    * lower defense
 
  6. Mage
-  * magicattack
-  * higher intel
-  * lower defense
+    * magicattack
+    * higher intel
+    * lower defense
 
  7. Musketeer
-  * rangedattack
-  * lower defense, hitchance
-  * higher rangedattack
+    * rangedattack
+    * lower defense, hitchance
+    * higher rangedattack
 
  8. Sorcerer
-  * magicattack
-  * higher intel, magicattack
-  * lower defense, hitchance
+    * magicattack
+    * higher intel, magicattack
+    * lower defense, hitchance
 
  9. Swordsman
-  * meleeattack
-  * higher defense, hitchance
-  * lower meleeattack
+    * meleeattack
+    * higher defense, hitchance
+    * lower meleeattack
 
  10. Warlock
-  ** magicattack
-  ** higher intel, magicattack
-  ** lower defnse, hitchance
+    * magicattack
+    * higher intel, magicattack
+    * lower defnse, hitchance
 ### Attack Types
-  * meleeattack
-    ** defined as strength * meleeattack - Monster's defense
-  * rangedattack
-    ** defined as dex * rangedattack - (Monster's defense /2)
-  * magicattack
-    ** defined as intel * magicattack
+  1. meleeattack
+    * defined as strength * meleeattack - Monster's defense
+  2. rangedattack
+    * defined as dex * rangedattack - (Monster's defense /2)
+  3. magicattack
+    * defined as intel * magicattack
 
 ## Monsters :japanese_ogre:
 
