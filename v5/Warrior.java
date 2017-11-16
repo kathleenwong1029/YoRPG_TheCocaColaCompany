@@ -12,17 +12,22 @@ public class Warrior extends Protagonist {
 	_defense -= 10;
     }
 
+    double old1 = _meleeattack;
+    double old2 = _hitchance;
+    int old3 = _defense;
 
     public void specialize()
     {
-	_attack = .8;
-	_defense = 10;
+	_meleeattack += .5;
+        _hitchance -= .3;
+	_defense -= 20;
     }
 
     public void normalize()
     {
-	_attack = .4;
-	_defense = 30;
+	_meleeattack = old1;
+	_defense = old3;
+	_hitchance = old2;
     }
 
 	

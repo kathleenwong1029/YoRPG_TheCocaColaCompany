@@ -12,11 +12,16 @@ public class Character
     protected int _strength;
     protected int _defense;
     protected double _meleeattack, _rangedattack, _magicattack, _hitchance;
+    protected int _dex, _intel;
 
 
 
     // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~
-    public int getDefense() { return _defense; }
+    public int getDefense() {
+	if (_defense < 0){
+	    return 0;
+		}
+	return _defense; }
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -48,9 +53,12 @@ public class Character
       Calls opponent's lowerHP() method to inflict damage.
       Returns damage dealt.
       =============================================*/
+
+    int damage;
+    
     public int attack( Character opponent )
     {
-	int damage = (int)( (_strength * _attack) - opponent.getDefense() );
+	damage = (int)( (_strength * _meleeattack) - opponent.getDefense() );
 	//System.out.println( "\t\t**DIAG** damage: " + damage );
 
 	if ( damage < 0 )

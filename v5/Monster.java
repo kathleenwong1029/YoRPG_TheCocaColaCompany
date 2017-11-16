@@ -22,8 +22,8 @@ public class Monster extends Character
     _hitPts = 150;
     _strength = 20 + (int)( Math.random() * 45 ); // [20,65)
     _defense = 20;
-    _attack = 1;
-    _hitchance = .5;
+    _meleeattack = 1;
+    _hitchance = .7;
   }
 
 
@@ -36,7 +36,7 @@ public class Monster extends Character
     =============================================*/
   public int attack( Protagonist opponent )
   {
-    int damage = (int)( (_strength * _attack) - opponent.getDefense() );
+    int damage = (int)( (_strength * _meleeattack) - opponent.getDefense() );
     //System.out.println( "\t\t**DIAG** damage: " + damage );
 
     if ( damage < 0 )

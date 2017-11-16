@@ -9,7 +9,7 @@ public class Demon extends Monster{
     //The Demon has higher attack than other monsters.
     public Demon (){
 	super();
-	_attack += .5;
+	_meleeattack += .5;
     }
 
     public static String about(){
@@ -19,7 +19,7 @@ public class Demon extends Monster{
     public static void main(String []args){
 	//test cases
 	Demon k = new Demon ();
-	System.out.println(k._attack);
+	System.out.println(k._meleeattack);
 	System.out.println(k.about());
     }
 }

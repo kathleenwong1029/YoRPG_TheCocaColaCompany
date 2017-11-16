@@ -18,13 +18,15 @@ public abstract class Protagonist extends Character
       =============================================*/
     public Protagonist()
     {
-	_hitPts = 125;
-	_strength = 100;
-	_defense = 40;
+	_hitPts = 150;
+	_strength = (int)(Math.random() * 80) + 20;
+	_defense = (int)(Math.random() * 40) + 20;
+	_dex = (int)(Math.random() * 80) + 20;
+	_intel = (int)(Math.random() * 80) + 20;
 	_meleeattack = .5;
 	_rangedattack = .5;
 	_magicattack = .5;
-	_hitchance = .5;
+	_hitchance = .7;
     }
 
 
@@ -53,15 +55,15 @@ public abstract class Protagonist extends Character
       =============================================*/
     public int attack( Monster opponent )
     {
-	int damage;
-	if (attacktype.equals("melee")){
+	int damage = 0;
+	if (attacktype().equals("melee")){
 	    damage = (int)( (_strength * _meleeattack) - opponent.getDefense() );
 	}
-	if (attacktype.equals("ranged")){
+	if (attacktype().equals("ranged")){
 	    damage = (int)( (_dex * _rangedattack) - (opponent.getDefense() / 2));
 	}
-	if (attacktype.equals("magic")){
-	    damage = (int)( (_dex * _magicattack));
+	if (attacktype().equals("magic")){
+	    damage = (int)( (_intel * _magicattack));
 	}
 
 	if ( damage < 0 )

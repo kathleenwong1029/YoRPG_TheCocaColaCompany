@@ -95,6 +95,30 @@ public class YoRPG
 	
 	s += "Paladin - " + ham.about() + "\n \n";
 
+	ham = new Archer("ham");
+
+	s += "Archer - " + ham.about() + "\n \n";
+
+	ham = new Musketeer("ham");
+
+	s += "Musketeer - " + ham.about() + "\n \n";
+
+	ham = new Arbalest("ham");
+
+	s += "Arbalest - " + ham.about() + "\n \n";
+
+	ham = new Mage("ham");
+
+	s += "Mage - " + ham.about() + "\n \n";
+
+	ham = new Warlock("ham");
+
+	s += "Warlock - " + ham.about() + "\n \n";
+
+	ham = new Sorceror("ham");
+
+	s += "Sorceror - " + ham.about() + "\n \n";
+
 	System.out.println(s);
 
 	s = "Selection: ";
@@ -115,9 +139,32 @@ public class YoRPG
         else if (classselect.equals("Paladin") || classselect.equals("paladin")){
 	    pat = new Paladin (name);
 	}
-	else {
-	    System.out.println("That nay be a class, friend!");
+	else if (classselect.equals("Archer") || classselect.equals("archer")){
+	    pat = new Archer (name);
 	}
+	else if (classselect.equals("Musketeer") || classselect.equals("musketeer")){
+	    pat = new Musketeer (name);
+	}
+	else if (classselect.equals("Arbalest") || classselect.equals("arbalest")){
+	    pat = new Arbalest (name);
+	}
+	else if (classselect.equals("Mage") || classselect.equals("mage")){
+	    pat = new Mage (name);
+	}
+	else if (classselect.equals("Warlock") || classselect.equals("warlock")){
+	    pat = new Warlock (name);
+	}
+	else if (classselect.equals("Sorceror") || classselect.equals("sorceror")){
+	    pat = new Sorceror (name);
+	}
+	else {
+	    System.out.println("That nay be a class, friend! Try again!");
+
+	    System.exit(0);
+	    
+	}
+
+	System.out.println("\n Your stats: \n" + "Health: " + Integer.toString(pat._hitPts) + "\n" + "Strength: " + Integer.toString(pat._strength) + "\n" + "Defense: " + Integer.toString(pat._defense) + "\n" + "Dexterity: " + Integer.toString(pat._dex) + "\n" + "Intelligence: " + Integer.toString(pat._intel) + "\n" + "Class: " + classselect);
 
     }//end newGame()
     
@@ -171,21 +218,30 @@ public class YoRPG
 		if (pat.hitchance() && smaug.hitchance()){
 		d1 = pat.attack(smaug);
 		d2 = smaug.attack(pat);
+
+		System.out.println( "\n" + pat.getName() + " dealt " + d1 +
+				    " points of damage.");
+
+		System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() + " for " + d2 + " points of damage.");
+		
 		}
 		else if (!pat.hitchance() && smaug.hitchance()){
-		    d1 = "a critical miss! 0";
+
 		    d2 = smaug.attack(pat);
+		    
+		    System.out.println("You missed!");
+
+		    System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() + " for " + d2 + " points of damage.");
+		    
 		}
 		else {
-		    d1 = "a critical miss! 0";
-		    d2 = "a critical miss! 0";
+
+		    System.out.println("Both ye and the monster missed! Fools!");
+		    
 		}
 		    
 
-		System.out.println( "\n" + pat.getName() + " dealt " + d1 +
-                            " points of damage.");
 
-		System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() + " for " + d2 + " points of damage.");
 	    }//end while
 
 	    //option 1: you & the monster perish
